@@ -76,3 +76,4 @@ spec:
     name: web-ui
   selector:
     role: locust-master
+  type: LoadBalancer
