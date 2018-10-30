@@ -5,9 +5,9 @@ metadata:
 data:
   locustfile.py: |
     from locust import HttpLocust, TaskSet
-    import numpy as np
+    import random
     def index(l):
-        if np.random.normal(0,1) > 0.1:
+        if random.normalvariate(0,1) > 0.2:
             l.client.get("/")
 
     def bad(l):
