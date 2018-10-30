@@ -22,7 +22,7 @@ spec:
         role: locust-slave
     spec:
       containers:
-      - image: zmiao1/sample_locust:007
+      - image: zmiao1/sample_locust:008
         imagePullPolicy: IfNotPresent
         name: locust-slave
         env:
