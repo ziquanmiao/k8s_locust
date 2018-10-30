@@ -4,13 +4,20 @@ metadata:
   name: scripts-cm
 data:
   locustfile.py: |
-    from locust import HttpLocust, TaskSet, task
-    class UserTasks(TaskSet):
-        @task
-        def index(self):
-            self.client.get("/")
-        @task
-        def stats(self):
-            self.client.get("/stats/requests")
+    from locust import HttpLocust, TaskSet
+    def index(l):
+        l.client.get("/")
+
+    def bad(l):
+        l.client.get("/bad")
+
+    def query(l):
+        l.client.get("/query")
+
+    class UserBehavior(TaskSet):
+        tasks = {index: 1, query: 1, bad:2}
+
     class WebsiteUser(HttpLocust):
-        task_set = UserTasks
+        task_set = UserBehavior
+        min_wait = 5000
+        max_wait = 9000
