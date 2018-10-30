@@ -22,7 +22,7 @@ spec:
         role: locust-master
     spec:
       containers:
-      - image: grubykarol/locust:0.8.1-py3.6
+      - image: zmiao1/sample_locust:007
         imagePullPolicy: IfNotPresent
         name: locust-master
         env:
