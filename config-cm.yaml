@@ -3,4 +3,4 @@ kind: ConfigMap
 metadata:
   name: locust-cm
 data:
-  ATTACKED_HOST: http://35.238.204.82:8080
+  ATTACKED_HOST: http://35.238.204.82:8080/
